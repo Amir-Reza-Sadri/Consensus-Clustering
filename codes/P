@@ -83,7 +83,7 @@ report = pd.DataFrame(np.array([ClassNumber,ClassName,TP,FP,TN,FN,np.round(ACC,2
 
 
 print(report)
-report.to_excel(r'D:\DeepQC\ConsensusClustering\results\DL+IQMs_report.xlsx', index = None, header=True)
+report.to_excel(r'D:\DeepQC\ConsensusClustering\results\report.xlsx', index = None, header=True)
 
 
 
@@ -110,14 +110,14 @@ ax = sns.heatmap(reversed_final, ax=ax,xticklabels=False, yticklabels=False,cmap
 
 ClassName.reverse()
 cbar_ax.set_yticklabels(ClassName) 
-plt.savefig(r"D:\DeepQC\ConsensusClustering\results\DL+IQMs_whole_labels.png", bbox_inches = 'tight', pad_inches = 0)
+plt.savefig(r"D:\DeepQC\ConsensusClustering\results\with_labels.png", bbox_inches = 'tight', pad_inches = 0)
 
 fig = plt.figure(figsize=(1,7))
 sns.heatmap(reversed_final,xticklabels=False, yticklabels=False,cmap=colors, linewidths=0,vmin=0.5, vmax=6.5,cbar=False)
-plt.savefig(r"D:\DeepQC\ConsensusClustering\results\DL+IQMs_labels.png", bbox_inches = 'tight', pad_inches = 0)
+plt.savefig(r"D:\DeepQC\ConsensusClustering\results\without_labels.png", bbox_inches = 'tight', pad_inches = 0)
 
 ######## cropping
 file = r'D:\DeepQC\ConsensusClustering\R\DL+IQM\consensus006.png'
 im = Image.open(file)
 im1 = im.crop((64, 0, 373, 431)) 
-im1.save(r"D:\DeepQC\ConsensusClustering\results\DL+IQMs.png")
+im1.save(r"D:\DeepQC\ConsensusClustering\results\cc.png")
