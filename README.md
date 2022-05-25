@@ -35,5 +35,10 @@ The metrics of each cluster is in the following format.
 | ClassNumber    | ClassName     | TP         | FP | TN | FN | Accuracy | Recall  | Precision | 
 | ------------- | ------------- | --------    |------------- | ------------- | --------    |------------- | ------------- | --------    |
 | 2     | other artifacts        | 2  | 0 | 97 | 0 | 1 | 1 | 1| 
+| 5     | banding        | 15  | 7 | 77 | 0 | 0.9 | 1 | 0.68| 
+| 4     | ghosting       | 17  | 1 | 81 | 3 | 1 | 0.85 | 0.94| 
+| 6     | motion       | 5 | 2 | 92 | 5 | 0.9 | 0.5 | 0.71| 
+| 3     | ringing       | 18  | 1 | 80 | 2 | 1 | 0.9 | 0.95| 
+| 1     | no artifact        | 30  | 1 | 68 | 2 | 1 | 0.94 | 0.97| 
 
 
