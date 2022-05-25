@@ -19,3 +19,9 @@ I explain the method via an example. Here we have a six clusters data correspond
 
 ### Step 1
 The first step is to run the R code named R. The input of the script is two _.txt_ files and the output is a _out_text.txt_ file and a folder named "saved_folder" containing the consensus plots. Since here we have six clusters (k=6) we will need the plot named _consensus06.png_ which looks like the follwoing plot. 
+
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/50635618/170316194-cf1be8b8-8772-4e28-b270-e2d75386ba8b.png"/>
+</p>
+
