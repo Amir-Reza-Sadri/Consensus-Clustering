@@ -26,4 +26,4 @@ The first step is to run the R code named **R**. The input of the script is two 
 </p>
 
 ### Step 2
-The second step is to run the Python code named **P**.
+The second step is to run the Python code named **P**. The input of the script is the _out_text.txt_ file and the output is a _report.xlsx_ file and two  
