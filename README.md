@@ -28,13 +28,6 @@ The first step is to run the R code named **R**. The input of the script is two 
 ### Step 2
 The second step is to run the Python code named **P**. The input of the script is the _out_text.txt_ file and the output is a _report.xlsx_ file and three _.png_ plots as follows.   
 
-
-![DL+IQMs_whole_labels](https://user-images.githubusercontent.com/50635618/170344968-5bed9e71-498a-4c3b-aa6e-d7c9c86d52cb.png)
-
-![DL+IQMs_labels](https://user-images.githubusercontent.com/50635618/170344981-3fa8b78b-bf26-4dbf-a21f-a161310c6ed1.png)
-
-
-![DL+IQMs](https://user-images.githubusercontent.com/50635618/170344990-6152656b-23d5-4d1d-b0e2-cbac85c5dbc6.png)
-
+![Picture2](https://user-images.githubusercontent.com/50635618/170345853-6f7b8f91-8383-434a-9d55-4333c52e9e98.png)
 
 
