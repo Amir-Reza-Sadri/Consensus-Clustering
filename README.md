@@ -11,7 +11,7 @@ A Python + R program for consensus clustering implementation based on  [this pap
 ## Requirements 
 Python packages: matplotlib, pandas, seaborn, numpy, and PIL
 
-R libraries: BiocManager, ConsensusClusterPlus
+R libraries: no specific library is needed
 
 
 ## Running
