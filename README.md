@@ -3,7 +3,7 @@ A Python + R program for consensus clustering implementation based on  [this pap
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/50635618/170350073-b4459fd2-3188-48d8-b19d-c686cf64c807.png"/>
+  <img src="https://user-images.githubusercontent.com/50635618/170381479-1485dd6a-7a9a-49bc-a514-bdbb42c15729.png"/>
 </p>
 
 
