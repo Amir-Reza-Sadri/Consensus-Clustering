@@ -18,10 +18,12 @@ R libraries: BiocManager, ConsensusClusterPlus
 I explain the method via an example. Here we have a six clusters data corresponding to 'no artifact', 'other artifacts', 'ringing', 'ghosting', 'banding', and 'motion' classes. The values of the data for each cluster along with the cluster labels is saved in _.txt_ files (see files directory).
 
 ### Step 1
-The first step is to run the R code named R. The input of the script is two _.txt_ files and the output is a _out_text.txt_ file and a folder named "saved_folder" containing the consensus plots. Since here we have six clusters (k=6) we will need the plot named _consensus06.png_ which looks like the follwoing plot. 
+The first step is to run the R code named **R**. The input of the script is two _.txt_ files and the output is a _out_text.txt_ file and a folder named "saved_folder" containing the consensus plots. Since here we have six clusters (k=6) we will need the plot named _consensus06.png_ which looks like the follwoing plot. 
 
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/50635618/170335825-e24077b5-5c93-41e2-b7e2-24699c0455ba.png"/>
 </p>
 
+### Step 2
+The second step is to run the Python code named **P**.
