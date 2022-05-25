@@ -1,0 +1,31 @@
+library(ConsensusClusterPlus)
+
+gbm <- read.table("cluster_values.txt",header = FALSE)
+gbm <-t(gbm) # transposes matrix (so that columns are studies, and rows are features)
+
+
+title="saved_folder" #name of folder in working directory
+
+tmyPal=c("#ffffff", "#e6eaed", "#ced6dc","#b6c1ca", "#9dacb8", "#8498a6", "#6c8395",
+         "#546e83","#3b5971", "#224560","#0a304e")
+
+results = ConsensusClusterPlus(gbm,maxK=6,writeTable=TRUE,reps=1000,pItem=.8,pFeature=1,title=title,                               
+                               clusterAlg="hc",distance="pearson",seed=1262118388.71279,plot="png",tmyPal=tmyPal)
+
+RECTALCLSS <- read.table("cluster_labels.txt",header = FALSE) # load class labels
+
+
+RECTALCLSS = data.matrix(RECTALCLSS)
+k <- 6   # number of clusters
+
+clusterLabels <- results[[k]]$consensusClass[results[[k]]$consensusTree$order] # sorted
+
+groundTruthLabels <- RECTALCLSS[results[[k]]$consensusTree$order] #sorted
+
+labels <- vector() # this is the variable you'll need
+
+labels <- cbind(labels,clusterLabels)
+
+labels <- cbind(labels,groundTruthLabels)
+
+write.table(labels, "out_text.txt", sep="\t",col.names = F, row.names = F)
