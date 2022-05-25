@@ -22,7 +22,7 @@ The first step is to run the R code named **R**. The input of the script is two 
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/50635618/170335825-e24077b5-5c93-41e2-b7e2-24699c0455ba.png"/>
+  <img src="https://user-images.githubusercontent.com/50635618/170344444-b230fb3d-ce3c-4034-92d6-442be4425fbb.png"/>
 </p>
 
 ### Step 2
