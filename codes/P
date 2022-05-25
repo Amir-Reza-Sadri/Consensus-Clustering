@@ -10,7 +10,7 @@ import pandas as pd
 import seaborn as sns
 import numpy as np
 from scipy.stats import mode
-from sklearn.metrics import confusion_matrix
+#from sklearn.metrics import confusion_matrix
 import os
 from PIL import Image
 
