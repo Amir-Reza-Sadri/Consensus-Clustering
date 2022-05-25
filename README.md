@@ -28,7 +28,7 @@ The first step is to run the R code named **R**. The input of the script is two 
 ### Step 2
 The second step is to run the Python code named **P**. The input of the script is the _out_text.txt_ file and the output is a _report.xlsx_ file and three _.png_ plots as follows.   
 
-![Picture2](https://user-images.githubusercontent.com/50635618/170345853-6f7b8f91-8383-434a-9d55-4333c52e9e98.png)
+![Picture2](https://user-images.githubusercontent.com/50635618/170381914-a2717696-4923-48ce-9b11-d47a57c8ceba.png)
 
 The metrics of each cluster is in the following format.
 
