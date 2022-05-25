@@ -41,4 +41,5 @@ The metrics of each cluster is in the following format.
 | 3     | ringing       | 18  | 1 | 80 | 2 | 1 | 0.9 | 0.95| 
 | 1     | no artifact        | 30  | 1 | 68 | 2 | 1 | 0.94 | 0.97| 
 
-
+### Step 3
+Finally, a _.pptx_ file is made to visualize the whole result. 
