@@ -34,12 +34,12 @@ The metrics of each cluster is in the following format.
 
 | ClassNumber    | ClassName     | TP         | FP | TN | FN | Accuracy | Recall  | Precision | 
 | ------------- | ------------- | --------    |------------- | ------------- | --------    |------------- | ------------- | --------    |
-| 2     | other artifacts        | 2  | 0 | 97 | 0 | 1 | 1 | 1| 
-| 5     | banding        | 15  | 7 | 77 | 0 | 0.9 | 1 | 0.68| 
-| 4     | ghosting       | 17  | 1 | 81 | 3 | 1 | 0.85 | 0.94| 
-| 6     | motion       | 5 | 2 | 92 | 5 | 0.9 | 0.5 | 0.71| 
-| 3     | ringing       | 18  | 1 | 80 | 2 | 1 | 0.9 | 0.95| 
-| 1     | no artifact        | 30  | 1 | 68 | 2 | 1 | 0.94 | 0.97| 
+| 5     | banding        | 9  | 0 | 90 | 1 | 0.99 | 0.9 | 1| 
+| 1     | bno artifact        | 31  | 2 | 66 | 1 | 0.97 | 0.97 | 0.94| 
+| 2     | other artifacts       | 2  | 0 | 97 | 0 | 1 | 1 | 1| 
+| 3     | ringing      | 16 | 1 | 82 | 4 | 0.95 | 0.8 | 0.94| 
+| 6     | motion       | 12  | 1 | 86 | 3 | 0.96 | 0.8 | 0.92| 
+| 4     | ghosting        | 20  | 5 | 74 | 0 | 0.95 | 1 | 0.8| 
 
 ### Step 3
 Finally, a _.pptx_ file is made to visualize the whole result. 
