@@ -22,6 +22,6 @@ The first step is to run the R code named R. The input of the script is two _.tx
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/50635618/170316194-cf1be8b8-8772-4e28-b270-e2d75386ba8b.png"/>
+  <img src="https://user-images.githubusercontent.com/50635618/170335825-e24077b5-5c93-41e2-b7e2-24699c0455ba.png"/>
 </p>
 
