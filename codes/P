@@ -1,0 +1,123 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon May 23 10:50:55 2022
+
+By: Amir R. Sadri (ars329@case.edu)
+"""
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+import numpy as np
+from scipy.stats import mode
+from sklearn.metrics import confusion_matrix
+import os
+from PIL import Image
+
+
+def apply_label(k):
+    if k==1:
+        out = 'no artifact'
+    elif k==2:
+        out = 'other artifacts'
+    elif k==3:
+        out = 'ringing'
+    elif k==4:
+        out = 'ghosting'
+    elif k==5:
+        out = 'banding'
+    elif k==6:
+        out = 'motion'
+    return out
+
+
+df = pd.read_csv(r'D:\DeepQC\ConsensusClustering\R\out_text.txt',header=None,sep='\t')
+
+clusters = np.array(df.iloc[:,0].unique())
+bf = df.groupby(1,sort=False).count()
+cf = df.groupby(0,sort=False).count()
+clusters_number = list(cf[1])    # number of samples per cluster
+
+TP = []
+FP = []
+FN = []
+TN = []
+ACC = []
+Recall = []
+Precision = []
+ClassNumber = []
+ClassName = []
+for i in clusters:
+    true_cluster = i
+    a = df.loc[df.iloc[:,0] == true_cluster]
+    b = mode(a.iloc[:,1])
+    tp = b[1][0]
+    fp = len(a) - tp
+    predicted_cluster = b[0][0]
+    
+    c = df.loc[df.iloc[:,1] == predicted_cluster]
+    fn = len(c) - tp
+    # print(true_cluster,predicted_cluster)
+   
+    tn = len(df) - len(a)
+    acc = (tp+tn)/(tp+tn+fp+fn)
+    recall = tp/(tp+fn)
+    precision = tp/(tp+fp)
+    TP.append(tp)
+    FP.append(fp)
+    FN.append(fn)
+    TN.append(tn)
+    ACC.append(acc)
+    Recall.append(recall)
+    Precision.append(precision)
+    ClassNumber.append(true_cluster)
+    ClassName.append(apply_label(predicted_cluster))
+
+
+
+report = pd.DataFrame(np.array([ClassNumber,ClassName,TP,FP,TN,FN,np.round(ACC,2),np.round(Recall,2),np.round(Precision,2)]).T,
+                      columns=['ClassNumber','ClassName','TP','FP','TN','FN','ACC','Recall','Precision'])
+
+
+
+
+
+print(report)
+report.to_excel(r'D:\DeepQC\ConsensusClustering\results\DL+IQMs_report.xlsx', index = None, header=True)
+
+
+
+
+data = df[[0]]
+
+ClassNumber.reverse()
+
+sorterIndex = dict(zip(ClassNumber, range(1,len(ClassNumber)+1)))
+
+data['Tm_Rank'] =  data[0].map(sorterIndex)
+
+final = data[['Tm_Rank']]
+reversed_final = final.iloc[::-1]
+
+colors = ["green","pink","red","orange","blue","gray"]
+
+cbar_kws = {"shrink":1, 'ticks': [1, 2, 3, 4, 5, 6]}
+grid_kws = {"width_ratios": (0.02, .05),'wspace':2}
+f, (ax, cbar_ax) = plt.subplots(1,2,gridspec_kw=grid_kws,figsize=(1,7))
+ax = sns.heatmap(reversed_final, ax=ax,xticklabels=False, yticklabels=False,cmap=colors, linewidths=0,vmin=0.5, vmax=6.5,
+                  cbar_ax=cbar_ax,
+                  cbar_kws=cbar_kws)
+
+ClassName.reverse()
+cbar_ax.set_yticklabels(ClassName) 
+plt.savefig(r"D:\DeepQC\ConsensusClustering\results\DL+IQMs_whole_labels.png", bbox_inches = 'tight', pad_inches = 0)
+
+fig = plt.figure(figsize=(1,7))
+sns.heatmap(reversed_final,xticklabels=False, yticklabels=False,cmap=colors, linewidths=0,vmin=0.5, vmax=6.5,cbar=False)
+plt.savefig(r"D:\DeepQC\ConsensusClustering\results\DL+IQMs_labels.png", bbox_inches = 'tight', pad_inches = 0)
+
+######## cropping
+file = r'D:\DeepQC\ConsensusClustering\R\DL+IQM\consensus006.png'
+im = Image.open(file)
+im1 = im.crop((64, 0, 373, 431)) 
+im1.save(r"D:\DeepQC\ConsensusClustering\results\DL+IQMs.png")
