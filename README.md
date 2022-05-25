@@ -15,4 +15,4 @@ R libraries: BiocManager, ConsensusClusterPlus
 
 
 ## Running
-I explain the method via an example. Here we have a six clusters data corresponding to 'no artifact', 'other artifacts', 'ringing','ghosting', 'banding', 'motion' classes. 
+I explain the method via an example. Here we have a six clusters data corresponding to 'no artifact', 'other artifacts', 'ringing', 'ghosting', 'banding', and 'motion' classes. The values of the data for each cluster along with the cluster labels is saved in _.txt_ files (see files directory).
