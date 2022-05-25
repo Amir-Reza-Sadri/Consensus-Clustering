@@ -31,3 +31,8 @@ The second step is to run the Python code named **P**. The input of the script i
 ![Picture2](https://user-images.githubusercontent.com/50635618/170345853-6f7b8f91-8383-434a-9d55-4333c52e9e98.png)
 
 
+| FirstName     | LastName      | City   
+| ------------- | ------------- | --------    |
+| `John`        | Test1         | `NewYork`   |
+| `Bob`         | Test2         | `Toronto`   |
+
